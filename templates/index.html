@@ -1,0 +1,169 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <!-- ======= Carousel Section ======= -->
+    <section id="hero">
+        <div class="hero-container">
+            <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+                <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active" style="background-image: url(../static/assets/img/slide/hands2.jpg)">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2 class="animate__animated animate__fadeInDown">Welcome To <span>UnashamedHeart Foundation</span></h2>
+                                <p class="animate__animated animate__fadeInUp"> The UnashamedHeart Foundation is a non-profit organization dedicated to extending a helping hand to those in need within our community.
+                                    Our mission revolves around fostering positive and lasting change by addressing the various challenges faced by individuals and families.</p>
+                                <a href="{% url 'about-url' %}" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="carousel-item" style="background-image: url(../static/assets/img/slide/hands2.jpg)">
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2 class="animate__animated animate__fadeInDown">Our  <span>Mission</span></h2>
+                                <p class="animate__animated animate__fadeInUp">Our mission is to alleviate the struggles of the less fortunate, providing essential aid and support to meet their basic needs.</p>
+                                <a href="{% url 'about-url' %}" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url(../static/assets/img/slide/hands2.jpg)">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated fanimate__adeInDown">Our <span>Vision</span></h2>
+                            <p class="animate__animated animate__fadeInUp">The vision of the UnashamedHeart Foundation is to create a society where every
+                                individual, regardless of their circumstances, has the opportunity to thrive and lead a dignified life. We envision a world where the needs of the most vulnerable are met, and where compassion and support are extended to those facing adversity.</p>
+                            <a href="{% url 'about-url' %}" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="carousel-item" style="background-image: url(../static/assets/img/slide/hands2.jpg)">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown">Our  <span>Ambition</span></h2>
+                            <p class="animate__animated animate__fadeInUp">The ambition of the UnashamedHeart Foundation is to be a beacon of hope and transformative change in the lives of those experiencing tough economic times. Our primary goal is to alleviate the suffering of the needy and create opportunities for them to break free from the chains of poverty and inequality.</p>
+                            <a href="{% url 'about-url' %}" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a>
+        </div>
+
+    </section>
+    <br>
+    <!-- End Carousel -->
+
+
+    <main id="main">
+
+
+
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="{% static 'assets/img/children1.jpg' %}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content">
+                        <h3 class="text-center text-danger"> Make a Difference Today!</h3>
+                        <p class="text-center fst-italic">
+                            Are you passionate when it comes to charity? If yes, then this platform gives you chance to express you generosity. Your support
+                            can bring hope to those in need, making a profound impact on lives and communities.
+                        </p>
+                        <div class="text-center">
+                            <a href="{% url 'donate-url' %}" class=""><button class="btn btn-warning mt-3"><span class="donate-event-btn">Donate Now</span></button></a>
+                        </div>
+                        <br>
+                        <h3 class="text-center text-danger">Wanna Join Us?</h3>
+                        <p class="text-center fst-italic">
+                            By signing up, you join a community of like-minded individuals dedicated to making a difference. Enjoy exclusive updates
+                            on our initiatives, events, and the direct impact your support is having
+                        </p>
+                        <div class="text-center">
+                            <a href="{% url 'register-url' %}" class=""><button class="btn btn-warning mt-3"><span class="donate-event-btn">Register Now</span></button></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End About Section -->
+
+        <!-- ======= core Values Section ======= -->
+        <section id="services" class="services">
+            <h2 class="text-center text-danger">Our Core Values</h2>
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="icon-box">
+                            <h4 class="text-dark">Compassion</h4>
+                            <p> Demonstrating empathy and understanding towards those facing hardships, fostering a caring and supportive community.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                        <div class="icon-box">
+                            <h4 class="text-dark">Integrity</h4>
+                            <p>Upholding honesty, transparency, and ethical conduct in all interactions, ensuring the trust and confidence of donors, beneficiaries, and the community.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <h4 class="text-dark">Empowerment</h4>
+                            <p> Strive to empower individuals by providing them with the necessary resources, skills, and opportunities to improve their lives and become self-sufficient</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="icon-box">
+                            <h4 class="text-dark">Inclusivity</h4>
+                            <p>Embracing diversity and inclusivity, recognizing and respecting the uniqueness of each individual, regardless of background, race, or creed.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="icon-box">
+                            <h4 class="text-dark">Accountability</h4>
+                            <p>Taking responsibility for actions and decisions, being accountable to donors, partners, and the community for the effective use of resources and the fulfillment of the organization's mission.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                        <div class="icon-box">
+                            <h4 class="text-dark">Collaboration</h4>
+                            <p> Fostering partnerships and collaboration with other organizations, stakeholders, and the community to maximize the impact of efforts and address social issues collectively.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Services Section -->
+    </main><!-- End #main -->
+
+
+{% endblock %}
