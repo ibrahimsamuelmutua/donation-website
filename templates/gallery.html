@@ -1,134 +1,129 @@
 {% extends 'master.html' %}
 {% load static %}
 {% block content %}
+<main id="main">
+<!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
 
-  <main id="main">
+                <ol>
+                    <li><a href="{% url 'home-url' %}">Home</a></li>
+                    <li>Gallery</li>
+                </ol>
+                <h2 class="text-center">Gallery</h2>
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
-
-        <ol>
-          <li><a href="{% url 'home-url' %}">Home</a></li>
-          <li>Gallery</li>
-        </ol>
-        <h2 class="text-center">Gallery</h2>
-
-      </div>
-    </section><!-- End Breadcrumbs -->
-
-    <!-- ======= Gallery Section ======= -->
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-        <div class="row portfolio-container">
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/children1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/children1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Children's home"><i class="bx bx-plus"></i></a>
-
-                </div>
-              </div>
             </div>
-          </div>
+        </section>
+<!-- End Breadcrumbs -->
+<!-- ======= Gallery Section ======= -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <div class="row portfolio-container">
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'assets/img/children1.jpg' %}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <div class="portfolio-links">
+                                    <a href="{% static 'assets/img/children1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Children's home"><i class="bx bx-plus"></i></a>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/project/street.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/project/street.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="street children"><i class="bx bx-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'assets/img/project/street.jpg' %}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <div class="portfolio-links">
+                                    <a href="{% static 'assets/img/project/street.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="street children"><i class="bx bx-plus"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{%  static 'assets/img/project/street1.jpg' %}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+
+                                <div class="portfolio-links">
+                                    <a href="{% static 'assets/img/project/street1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="street children"><i class="bx bx-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <img src="{%  static 'assets/img/project/elderly.jpg' %}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <div class="portfolio-links">
+                                    <a href="{% static 'assets/img/project/elderly.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Elderly"><i class="bx bx-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'assets/img/slide/hands2.jpg' %}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <div class="portfolio-links">
+                                    <a href="{% static 'assets/img/slide/hands2.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="hands"><i class="bx bx-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'assets/img/aboutimage.jpg' %}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <div class="portfolio-links">
+                                    <a href="{% static 'assets/img/aboutimage.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="hands"><i class="bx bx-plus"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'assets/img/team/ondeyodp.jpg' %}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <div class="portfolio-links">
+                                    <a href="{% static 'assets/img/team/ondeyodp.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ondeyo"><i class="bx bx-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'assets/img/project/children.jpg' %}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <div class="portfolio-links">
+                                    <a href="{% static 'assets/img/project/children.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="children"><i class="bx bx-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-wrap">
+                            <img src="{% static 'assets/img/slide/love.jpeg' %}" class="img-fluid" alt="">
+                            <div class="portfolio-info">
+                                <div class="portfolio-links">
+                                    <a href="{% static 'assets/img/slide/love.jpeg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="love"><i class="bx bx-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{%  static 'assets/img/project/street1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/project/street1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="street children"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{%  static 'assets/img/project/elderly.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/project/elderly.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Elderly"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/slide/hands2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/slide/hands2.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="hands"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/aboutimage.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/aboutimage.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="hands"><i class="bx bx-plus"></i></a>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/team/ondeyodp.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/team/ondeyodp.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Ondeyo"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/project/children.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/project/children.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="children"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/slide/love.jpeg' %}" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <div class="portfolio-links">
-                  <a href="{% static 'assets/img/slide/love.jpeg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="love"><i class="bx bx-plus"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-  <!--  End of Gallery Section -->
-  </main>
+        </section>
+<!--  End of Gallery Section -->
+</main>
 <!-- End #main -->
 {% endblock %}

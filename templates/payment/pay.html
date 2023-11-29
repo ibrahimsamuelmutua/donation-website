@@ -1,0 +1,38 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="{% static 'assets/css/login_logout.css' %}">
+    </head>
+    <br><br><br>
+        <section>
+    <form method="POST" action="#" >
+        {% csrf_token %}
+        <h2 class="text-dark">make payment</h2>
+    <div class="form-group">
+      <h4 class="text-center text-dark mb-4">contribution towards: <strong class="text-dark">{{ event.event_name }}</strong></h4>
+    </div>
+
+    <div class="form-group">
+       <label class="text-dark">Amount to be deducted from your M-pesa</label>
+    <input type="text" readonly placeholder="Ksh {{ event.minimum_amount }}" class="form-control" name="minimum_amount" >
+    </div>
+    <div class="form-group">
+      <label class="text-dark">Enter phone number</label>
+      <input type="text" required name="phone_number" placeholder="format 2547.....">
+    </div>
+        <div>
+            <br>
+                <button class="btn btn-outline-dark" type="submit"><strong>Donate</strong></button>
+        </div>
+        <br>
+        <div>
+            <p><strong class="text-dark">Want to donate more than Ksh {{ event.minimum_amount }}, </strong><a href="{% url 'pay2-url' %}"><strong class="text-dark text-decoration-underline bx-burst-hover">Click here</strong></a></p>
+        </div>
+
+
+
+    </form>
+    </section>
+{% endblock %}

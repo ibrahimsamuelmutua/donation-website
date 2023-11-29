@@ -10,7 +10,7 @@ def about(request):
 
 
 def services(request):
-    return render(request, 'services.html')
+    return render(request, 'projects.html')
 
 
 def gallery(request):
@@ -22,16 +22,14 @@ def team(request):
 
 
 def donate(request):
-    return render(request, 'donate.html')
+    return render(request, 'events/donate.html')
 
 
 def contact(request):
     return render(request, 'contact.html')
 
 
-def register(request):
-    return render(request, 'register.html')
 
 
-def loginuser(request):
-    return render(request, 'login.html')
+
+

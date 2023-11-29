@@ -1,0 +1,43 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+        <head>
+        <title></title>
+        <link rel="stylesheet" href="{% static 'assets/css/login_logout.css' %}">
+    </head>
+    <br>
+    <br><br><br><br><br><br>
+    <section>
+        <form method="POST" action="{% url 'add-event-url' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Add Event</h2>
+            <div class="form-group">
+                <label>Name</label>
+                {{ form.event_name }}
+
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                    {{ form.event_description }}
+            </div>
+                <div class="form-group">
+                <label>Venue</label>
+                    {{ form.venue }}
+            </div>
+            <div class="form-group">
+                <label>Minimum contribution amount</label>
+                    {{ form.minimum_amount }}
+            </div>
+             <div class="form-group">
+                 <label>Date</label>
+                {{ form.event_date}}
+            </div>
+                <div class="form-group">
+                <label>image</label>
+                    {{ form.image }}
+            </div>
+            <br>
+            <button class="btn btn-outline-dark" type="submit"><strong>Add Event</strong></button>
+        </form>
+    </section>
+{% endblock %}

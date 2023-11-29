@@ -30,62 +30,149 @@
 </head>
 
 <body>
-<!-- ======= Header ======= -->
-<header id="header" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-between align-items-center">
 
-        <div class="logo">
-            <h1><a href="{% url 'home-url' %}">UnashamedHeart Foundation</a></h1>
+<!-- ======= Admin Header ======= -->
+{% if user.is_admin %}
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <div class="logo">
+                <h1><a href="{% url 'home-url' %}">UnashamedHeart Foundation</a></h1>
+            </div>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="{% url 'home-url' %}">Home</a></li>
+                    <li><a href="{% url 'add-event-url' %}">create event</a></li>
+                    <li><a href="{% url 'about-url' %}">About</a></li>
+                    <li><a href="{% url 'services-url' %}">projects</a></li>
+                    <li><a href="{% url 'gallery-url' %}">Gallery</a></li>
+                    <li><a href="{% url 'team-url' %}">Team</a></li>
+                    <li><a href="{% url 'contact-url' %}">Contact</a></li>
+                    <!--<li><a href="{% url 'register-url' %}">Become a member</a></li>-->
+
+                    <li><a href="{% url 'donate-url' %}"><button class=" btn btn-outline-danger"><span class="donate">Donate Now</span> </button></a></li>
+                    <li class="dropdown"><a href="#"><span><strong>{{ user.username }}, </strong><strong class="text-danger">Admin</strong></span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="{% url 'logout-url' %} ">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
         </div>
+    </header>
+<!-- End of Admin Header -->
 
-        <nav id="navbar" class="navbar">
-            <ul>
-                <li><a href="{% url 'home-url' %}">Home</a></li>
-                <li><a href="{% url 'about-url' %}">About</a></li>
-                <li><a href="{% url 'services-url' %}">projects</a></li>
-                <li><a href="{% url 'gallery-url' %}">Gallery</a></li>
-                <li><a href="{% url 'team-url' %}">Team</a></li>
-                <li><a href="{% url 'contact-url' %}">Contact</a></li>
-                <li><a href="{% url 'register-url' %}">Become a member</a></li>
-                <li><a href="{% url 'donate-url' %}"><button class=" btn btn-outline-danger"><span class="donate">Donate Now</span> </button></a></li>
-                <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="{% url 'login-url' %}">Login</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
+ <!-- start of member Header -->
+{% elif user.is_authenticated %}
 
-    </div>
-</header><!-- End Header -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <div class="logo">
+                <h1><a href="{% url 'home-url' %}">UnashamedHeart Foundation</a></h1>
+            </div>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="{% url 'home-url' %}">Home</a></li>
+                    <li><a href="{% url 'member-profile-url' user.id %}">Your profile</a></li>
+                    <li><a href="{% url 'about-url' %}">About</a></li>
+                    <li><a href="{% url 'services-url' %}">projects</a></li>
+                    <li><a href="{% url 'gallery-url' %}">Gallery</a></li>
+                    <li><a href="{% url 'team-url' %}">Team</a></li>
+                    <li><a href="{% url 'contact-url' %}">Contact</a></li>
+                    <li><a href="{% url 'donate-url' %}"><button class=" btn btn-outline-danger"><span class="donate">Donate Now</span> </button></a></li>
+                    <li class="dropdown"><a href="#"><span><strong>{{ user.username }}, </strong><strong class="text-danger">Member</strong></span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="{% url 'logout-url' %} ">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
+
+        </div>
+    </header>
+<!-- End Of member Header -->
+    <!-- start of unauthorized user Header -->
+{% else %}
+
+    <header id="header" class="d-flex  align-items-center">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <div class="logo">
+                <h1><a href="{% url 'home-url' %}">UnashamedHeart Foundation</a></h1>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a href="{% url 'home-url' %}">Home</a></li>
+                    <li><a href="{% url 'about-url' %}">About</a></li>
+                    <li><a href="{% url 'services-url' %}">projects</a></li>
+                    <li><a href="{% url 'gallery-url' %}">Gallery</a></li>
+                    <li><a href="{% url 'team-url' %}">Team</a></li>
+                    <li><a href="{% url 'contact-url' %}">Contact</a></li>
+                    <li><a href="{% url 'register-url' %}">Become a member</a></li>
+                    <li><a href="{% url 'donate-url' %}"><button class=" btn btn-outline-danger"><span class="donate">Donate Now</span> </button></a></li>
+                    <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="{% url 'login-url' %}">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+            <!-- .navbar -->
+
+        </div>
+    </header>
+{% endif %}
+<!-- End of unauthorized user Header -->
+
+<!--start of message alert-->
+{% if messages %}
+    {% for message in messages %}
+        <div class="container">
+            <div class="alert  alert-dismissible fade show text-center ml-50" role="alert">
+                <strong class="text-center text-danger">{{message}}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+
 {% block content %}
 
 
-{% endblock %}
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-      <div class="container">
 
+{% endblock %}
+<!-- ======= Partners Section ======= -->
+<section id="clients" class="clients">
+    <div class="container">
         <div class="section-title">
-          <h2>Our Partners</h2>
-          <p>As UnashamedHeart Foundation we have partnered with several organizations to help us realize our objective. These organizations are as below.</p>
+            <h2>Our Partners</h2>
+            <p>As UnashamedHeart Foundation we have partnered with several organizations to help us realize our objective. These organizations are as below.</p>
         </div>
 
         <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="{% static 'assets/img/partners/kenyahuman.png' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'assets/img/partners/handsofhope.jpeg' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'assets/img/partners/muthengifoundation.png' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'assets/img/partners/agakhanfoundation.png' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'assets/img/partners/worldfriends.jpeg' %}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{% static 'assets/img/partners/mamadoinggood.png' %}" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
+            <div class="swiper-wrapper align-items-center">
+                <div class="swiper-slide"><img src="{% static 'assets/img/partners/kenyahuman.png' %}" class="img-fluid" alt=""></div>
+                <div class="swiper-slide"><img src="{% static 'assets/img/partners/handsofhope.jpeg' %}" class="img-fluid" alt=""></div>
+                <div class="swiper-slide"><img src="{% static 'assets/img/partners/muthengifoundation.png' %}" class="img-fluid" alt=""></div>
+                <div class="swiper-slide"><img src="{% static 'assets/img/partners/agakhanfoundation.png' %}" class="img-fluid" alt=""></div>
+                <div class="swiper-slide"><img src="{% static 'assets/img/partners/worldfriends.jpeg' %}" class="img-fluid" alt=""></div>
+                <div class="swiper-slide"><img src="{% static 'assets/img/partners/mamadoinggood.png' %}" class="img-fluid" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
         </div>
 
-      </div>
-    </section><!-- End Clients Section -->
+    </div>
+</section>
+<!-- End partners Section -->
+
 <!-- ======= Footer ======= -->
 <footer id="footer">
 
@@ -165,8 +252,8 @@
             Designed by <a href="#">Samuel Ibrahim</a>
         </div>
     </div>
-</footer><!-- End Footer -->
-
+</footer>
+<!-- End Footer -->
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
@@ -179,8 +266,9 @@
 <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
 
 <!-- Template Main JS File -->
-<script src="{% static 'assets/js/main.js' %}"></script>
-
+<script
+        src="{% static 'assets/js/main.js' %}">
+</script>
 </body>
 
 </html>

@@ -1,0 +1,58 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title></title>
+    <link rel="stylesheet" href="{% static 'assets/css/login_logout.css' %}">
+</head>
+<br><br><br><br><br>
+<section>
+    <form method="POST" class="profile-form" enctype="multipart/form-data" action="#">
+        {% csrf_token %}
+        <div class="text-center">
+                <img class="profile-image " src="{% static '../' %}{{ user.image }}"  alt="">
+                <p>current file: <span class="text-success">{{ user.image}}</span></p>
+        </div>
+        <div class="form-group">
+                <input type="file" value="{{ user.image }}"  class="form-control mt-2 mb-3" name="image" >
+                <a href="{% url 'member-profile-url' user.id %}"><button type="submit" class="btn btn-success"><span class="donate-event-btn">Update profile image </span></button></a>
+        </div>
+        <div class="container mt-4 ">
+            <table class="table table-bordered flex-row  ">
+                <h4 class="text-center text-dark">
+                    <strong>personal details</strong>
+                </h4>
+                <thead class="">
+                <tr>
+                    <td class="text-center"><strong>#</strong></td>
+                    <td class="text-center"><strong>-</strong></td>
+                    <td class="text-center"><strong>-</strong></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="text-center"><strong class="text-danger">1.</strong></td>
+                    <td class="text-center"><strong class="text-success" >username</strong></td>
+                    <td class="text-center"><strong class="text-success">{{ user.username }}</strong></td>
+                </tr>
+                <tr>
+                    <td class="text-center" ><strong class="text-danger">2.</strong></td>
+                    <td class="text-center"><strong class="text-success">first name</strong></td>
+                    <td class="text-center"><strong class="text-success">{{ user.first_name }}</strong></td>
+                </tr>
+                <tr>
+                    <td class="text-center"><strong class="text-danger">3.</strong></td>
+                    <td class="text-center"><strong class="text-success">last name</strong></td>
+                    <td class="text-center"><strong class="text-success">{{ user.last_name }}</strong></td>
+                </tr>
+                <tr>
+                    <td class="text-center"><strong class="text-danger">4.</strong></td>
+                    <td class="text-center"><strong class="text-success">email</strong></td>
+                    <td class="text-center"><strong class="text-success">{{ user.email }}</strong></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</section>
+{% endblock %}

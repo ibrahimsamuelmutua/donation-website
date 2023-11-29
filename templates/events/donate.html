@@ -1,0 +1,51 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+<--start of main-->
+<main id="main">
+<!-- ======= Breadcrumbs ======= -->
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+        <ol>
+            <li><a href="{% url 'home-url' %}">Home</a></li>
+            <li>Donate</li>
+        </ol>
+        <h2 class="text-center">Make Your Donation Here</h2>
+    </div>
+</section>
+<!-- End Breadcrumbs -->
+
+<!-- ======= Team Section ======= -->
+<section id="team" class="team">
+    <div class="container">
+        <div class="row">
+            {% for event in events %}
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+
+                    <div class="member">
+                        <img src="{% static '../' %}{{ event.image }}"  alt="">
+                        <h4 class="text-info">{{ event.event_name }}</h4><br>
+                        <h5 class="text-danger">{{ event.event_description }}</h5>
+                        <p><strong>when:</strong>  </p>  <h4 class="text-danger">{{ event.event_date }}</h4>
+                        <p><strong>Venue: </strong></p><h4 class="text-danger">{{ event.venue }}</h4>
+                        <p><strong>min contribution amount in Ksh</strong></p> <h4 class="text-danger">{{ event.minimum_amount }}</h4>
+                        <a href="{% url 'pay-url' event.id %}" class=""><button class="btn btn-warning mt-3"><span class="donate-event-btn">Donate</span></button></a>
+                        {% if user.is_admin %}
+                            <div class="social">
+                                <a href="{% url 'update-event-url' event.id %}"><button class="btn btn-outline-success mr-10"><span class="donate-event-btn">Update </span></button></a>
+                                <a href="{% url 'delete-url' event.id %}"><button class="btn btn-outline-danger "><span class="donate-event-btn">Delete</span></button></a>
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- End Team Section -->
+</main>
+<!-- End #main -->
+{% endblock %}

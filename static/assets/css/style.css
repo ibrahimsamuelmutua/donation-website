@@ -2221,6 +2221,7 @@ section {
   font-size: 14px;
   font-family:"Poppins", sans-serif;
   font-weight: bold;
+  width: 100%;
 
 }
 
@@ -2228,3 +2229,6 @@ section {
 .img-fluid{
   border-radius: 12px;
 }
+
+
+

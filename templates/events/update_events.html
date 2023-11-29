@@ -1,0 +1,48 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <title></title>
+    <link rel="stylesheet" href="{% static 'assets/css/login_logout.css' %}">
+</head>
+<br><br><br><br><br><br><br><br><br>
+<section>
+    <form method="POST" action="{% url 'update-event-url' event.id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h2 class="text-dark">Update event</h2>
+        <div class="form-group">
+            <label class="text-dark" for="username">Event Name</label>
+            <input type="text" value="{{ event.event_name }}" name="event_name" >
+        </div>
+
+        <div  class="form-group">
+            <label class="text-dark" for="event_description">Description</label>
+            <input type="text" value="{{ event.event_description }}" name="event_description" >
+        </div>
+        <div  class="form-group">
+            <label class="text-dark" for="event_date">Date</label>
+            <input type="text" value="{{ event.event_date }}" placeholder="use the format 2023-10-9" name="event_date" >
+        </div>
+
+        <div class="form-group">
+            <label class="text-dark" for="venue">Venue</label>
+            <input type="text" value="{{ event.venue }}" name="venue" >
+        </div>
+
+        <div class="form-group">
+            <label class="text-dark" for="minimum_amount">Minimum contribution amount</label>
+            <input type="text" value="{{ event.minimum_amount }}" class="form-control" name="minimum_amount" >
+        </div>
+
+        <div class="form-group">
+            <div class="text-center">
+                <img class="update-image" src="{% static '../' %}{{ event.image }}" alt="">
+            </div>
+            <input type="file" value="{{ event.image }}" class="form-control mt-2" name="image" >
+        </div>
+        <br>
+        <a href="{% url 'donate-url' %}"><button class="btn btn-outline-dark" type="submit"><strong>Update</strong></button></a>
+
+    </form>
+</section>
+{% endblock %}
