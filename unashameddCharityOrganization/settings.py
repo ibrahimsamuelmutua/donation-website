@@ -128,3 +128,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'home-url'
 LOGIN_URL = 'login-url'
 DATE_FORMAT = 'D-m-y'
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "samuelmutuaibrahim@gmail.com"
+EMAIL_HOST_PASSWORD = "lyxa xeod wblu qzmy"
+EMAIL_USE_TLS = True
+# EMAIL_USE_SSL= False

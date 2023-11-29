@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.mail import send_mail
 
 
 def home(request):
@@ -26,10 +27,16 @@ def donate(request):
 
 
 def contact(request):
+    if request.method == 'POST':
+        sender_name = request.POST['name']
+        sender_email = request.POST['email']
+        sender_message = request.POST['message']
+
+        send_mail(
+            sender_name,
+            sender_email,
+            sender_message,
+            ["samuelmutuaibrahim@gmail.com", "ondeyostephen0@gmail.com"]
+        )
+        return render(request,'contact.html',{'sender_name':sender_name})
     return render(request, 'contact.html')
-
-
-
-
-
-
